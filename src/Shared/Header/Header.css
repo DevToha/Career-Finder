@@ -1,0 +1,24 @@
+
+.button4 {
+    width: 120px;
+    height: 40px;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    font-size: 16px;
+    text-align: center;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    position: relative;
+    background-color: #29cc31;
+    border-radius: 15px;
+}
+.button4:hover {
+    background-color: #3838ff;
+}
+
+.navbars{
+    width: 50%;
+    justify-content: flex-end;
+}
