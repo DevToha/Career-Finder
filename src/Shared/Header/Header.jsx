@@ -1,36 +1,18 @@
 import { Link, NavLink } from "react-router-dom";
 import './Header.css'
 import image from './Image/logo.webp'
+import { AuthContext } from "../../Providers/AuthProvider";
+import { useContext } from "react";
 
 const Header = () => {
 
-    // const [theme, setTheme] = useState('light')
+    const { user, logOut } = useContext(AuthContext)
 
-    // const { user, logOut } = useContext(AuthContext)
-
-    // useEffect(() => {
-    //     localStorage.setItem('theme', theme)
-    //     const localTheme = localStorage.getItem('theme')
-    //     document.querySelector('html').setAttribute('data-theme', localTheme)
-    // }, [theme])
-
-    // const handleToggle = e => {
-    //     console.log(e.target.value)
-    //     if (e.target.checked) {
-    //         setTheme('dark')
-    //     }
-    //     else {
-    //         setTheme('light')
-    //     }
-    // }
-
-    // console.log(theme)
-
-    // const handleSignOut = () => {
-    //     logOut()
-    //         .then()
-    //         .catch()
-    // }
+    const handleSignOut = () => {
+        logOut()
+            .then()
+            .catch()
+    }
 
     const links = <>
         <li><NavLink to="/"><span className="text-lg font-semibold">Home</span></NavLink></li>
@@ -51,13 +33,27 @@ const Header = () => {
                         </div>
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 font-medium">
                             {links}
-                            <div className="flex gap-4 ml-[100px] md:mt-0 sm:mt-10 lg:mt-0">
-                                <Link to="/login">
-                                    <button className="button40 lg:mb-0 md:mb-0 mb-5">LOGIN</button>
-                                </Link>
-                                <Link to="/register">
-                                    <button className="button40">REGISTER</button>
-                                </Link>
+                            <div className="">
+
+                                <div className="">
+                                    {
+                                        user && <span className=" absolute lg:inline md:inline hidden cursor-pointer w-[45px] mr-5 rounded-full h-[45px]"><img className="rounded-full relative right-16  w-[45px] h-[45px]" src={user.photoURL} alt="" title={user.displayName} /></span>
+                                    }
+
+                                    {
+                                        user ?
+                                            <button onClick={handleSignOut} className="button40">LOG OUT</button>
+                                            :
+                                            <div className="flex gap-4 ml-[100px] md:mt-0 sm:mt-10 lg:mt-0">
+                                                <Link to="/login">
+                                                    <button className="button40 lg:mb-0 md:mb-0 mb-5">LOGIN</button>
+                                                </Link>
+                                                <Link to="/register">
+                                                    <button className="button40">REGISTER</button>
+                                                </Link>
+                                            </div>
+                                    }
+                                </div>
                             </div>
                         </ul>
                     </div>
@@ -70,37 +66,29 @@ const Header = () => {
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 font-medium">
                         {links}
-                        <div className="flex gap-4 ml-[180px] md:mt-0 sm:mt-10 lg:mt-0">
-                            <Link to="/login">
-                                <button className="button40 lg:mb-0 md:mb-0 mb-5">LOGIN</button>
-                            </Link>
-                            <Link to="/register">
-                                <button className="button40">REGISTER</button>
-                            </Link>
+                        <div className="">
+
+                            <div className="">
+                                {
+                                    user && <span className="ml-[350px] mt-1 absolute lg:inline md:inline hidden cursor-pointer w-[45px] mr-5 rounded-full h-[45px]"><img className="rounded-full relative right-16  w-[45px] h-[45px]" src={user.photoURL} alt="" title={user.displayName} /></span>
+                                }
+
+                                {
+                                    user ?
+                                        <button onClick={handleSignOut} className="ml-[350px]  button40">LOG OUT</button>
+                                        :
+                                        <div className="flex gap-4 ml-[150px] md:mt-0 sm:mt-10 lg:mt-0">
+                                            <Link to="/login">
+                                                <button className="button40 lg:mb-0 md:mb-0 mb-5">LOGIN</button>
+                                            </Link>
+                                            <Link to="/register">
+                                                <button className="button40">REGISTER</button>
+                                            </Link>
+                                        </div>
+                                }
+                            </div>
                         </div>
                     </ul>
-                </div>
-                <div className="">
-
-                    {/* <div className="">
-                        {
-                            user && <span className=" absolute lg:inline md:inline hidden cursor-pointer w-[45px] mr-5 rounded-full h-[45px]"><img className="rounded-full relative right-16  w-[45px] h-[45px]" src={user.photoURL} alt="" title={user.displayName} /></span>
-                        }
-
-                        {
-                            user ?
-                                <button onClick={handleSignOut} className="button40">LOG OUT</button>
-                                :
-                                <div className="flex gap-4 ml-[100px] md:mt-0 sm:mt-10 lg:mt-0">
-                                    <Link to="/login">
-                                        <button className="button40 lg:mb-0 md:mb-0 mb-5">LOGIN</button>
-                                    </Link>
-                                    <Link to="/register">
-                                        <button className="button40">REGISTER</button>
-                                    </Link>
-                                </div>
-                        }
-                    </div> */}
                 </div>
             </div>
 
