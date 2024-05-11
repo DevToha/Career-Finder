@@ -4,6 +4,7 @@ import Blogs from "../Components/NavBar page/Blogs/Blogs";
 import Homes from "../Components/Home/Homes/Homes";
 import Login from "../Components/NavBar page/Login/Login";
 import Register from "../Components/NavBar page/Register/Register";
+import AddJob from "../Components/NavBar page/Add Job/AddJob";
 
 const router = createBrowserRouter([
     {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
             {
                 path: '/Register',
                 element: <Register></Register>
+            },
+            {
+                path: '/AddJob',
+                element: <AddJob></AddJob>
             }
 
         ]

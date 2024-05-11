@@ -1,0 +1,63 @@
+import './extra.css'
+
+const PricingPlan = () => {
+    return (
+        <div className="mt-10">
+            <h1 className="text-2xl font-semibold text-center mb-10">PRICING PLAN</h1>
+
+            <div className='flex gap-12 justify-center'>
+                <div className="card3">
+                    <span className="card3-title">BASIC PLAN</span>
+                    <p className="card3-description border-y mb-14 bg-[#00e2bd] w-[] h-[160px] pt-[41px]"><span className='text-6xl font-extrabold text-white'>$29</span> <br />/ Per Month</p>
+                    <div className='text-lg font-medium'>
+                        <p>5 Jobs Posting</p>
+                        <p  className='my-5'>2 Featured jobs</p>
+                        <p>1 Renew Jobs</p>
+                        <p className='my-5'>10 Days Duration</p>
+                        <p>Email Alert</p>
+                    </div>
+                    <div className="">
+                        <button className="button31 mt-10">Accept</button>
+                    </div>
+                </div>
+
+                {/*  */}
+
+                <div className="card3">
+                    <span className="card3-title">PREMIUM PLAN</span>
+                    <p className="card3-description border-y mb-14 bg-[#00e2bd] w-[] h-[160px] pt-[41px]"><span className='text-6xl font-extrabold text-white'>$49</span> <br />/ Per Month</p>
+                    <div className='text-lg font-medium'>
+                        <p>5 Jobs Posting</p>
+                        <p  className='my-5'>2 Featured jobs</p>
+                        <p>1 Renew Jobs</p>
+                        <p className='my-5'>10 Days Duration</p>
+                        <p>Email Alert</p>
+                    </div>
+                    <div className="">
+                        <button className="button31 mt-10">Accept</button>
+                    </div>
+                </div>
+
+                {/*  */}
+
+                <div className="card3">
+                    <span className="card3-title">ADVANCED PLAN</span>
+                    <p className="card3-description border-y mb-14 bg-[#00e2bd] w-[] h-[160px] pt-[41px]"><span className='text-6xl font-extrabold text-white'>$79</span> <br />/ Per Month</p>
+                    <div className='text-lg font-medium'>
+                        <p>5 Jobs Posting</p>
+                        <p  className='my-5'>2 Featured jobs</p>
+                        <p>1 Renew Jobs</p>
+                        <p className='my-5'>10 Days Duration</p>
+                        <p>Email Alert</p>
+                    </div>
+                    <div className="">
+                        <button className="button31 mt-10">Accept</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    );
+};
+
+export default PricingPlan;

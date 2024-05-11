@@ -1,24 +1,108 @@
+.navbar-start-Custom {
+    width: 25%;
+    justify-content: flex-start;
+}
 
-.button4 {
-    width: 120px;
-    height: 40px;
-    color: #fff;
-    cursor: pointer;
-    outline: none;
-    border: none;
-    font-size: 16px;
-    text-align: center;
-    font-weight: bold;
-    transition: all 0.3s ease;
+a.active {
     position: relative;
-    background-color: #29cc31;
-    border-radius: 15px;
-}
-.button4:hover {
-    background-color: #3838ff;
+    text-decoration: none;
+    color: #23c0e9;
 }
 
-.navbars{
+a.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background-color: #23c0e9;
+    animation: pulsate 1.5s infinite alternate; /* Apply pulsating animation */
+}
+
+@keyframes pulsate {
+    0% {
+        transform: scaleX(1); /* Initial scale */
+        opacity: 0.7; /* Initial opacity */
+    }
+    100% {
+        transform: scaleX(1.2); /* Scale up */
+        opacity: 1; /* Full opacity */
+    }
+}
+
+a.active:hover::after {
+    animation: none; /* Disable pulsating animation on hover */
+    width: 110%;
+    height: 4px;
+    background-color: #0a74b8;
+    box-shadow: 0 4px 10px rgba(35, 192, 233, 0.7);
+}
+
+.button40 {
+    position: relative;
+    width: 110px;
+    height: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 10px;
+    overflow: hidden;
+    color: black;
+    /* border: 1px solid #23c0e9; */
+    transition: all 0.2s ease-in;
+    cursor: pointer;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    /* background-color: #23c0e9; */
+    background-color: rgba(28, 11, 97, 0.412);
+  }
+  
+  .button40::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 140%;
+    height: 180%;
+    border-radius: 50%;
+    background-color: #23c0e9;
+    transform: translateX(-50%) scaleY(1) scaleX(1.25);
+    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+    z-index: -1;
+  }
+  
+  .button40::after {
+    content: "";
+    position: absolute;
+    top: 180%;
+    left: 55%;
+    width: 160%;
+    height: 190%;
+    border-radius: 50%;
+    background-color: #23c0e9;
+    transform: translateX(-50%) scaleY(1) scaleX(1.45);
+    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+    z-index: -1;
+  }
+  
+  .button40:hover {
+    color: #fff;
+    border: 1px solid #23c0e9;
+  }
+  
+  .button40:hover::before {
+    top: -35%;
+    background-color: #23c0e9;
+    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+  }
+  
+  .button40:hover::after {
+    top: -45%;
+    background-color: #23c0e9;
+    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+  }
+
+.navbars {
     width: 50%;
     justify-content: flex-end;
 }
