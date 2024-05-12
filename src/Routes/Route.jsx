@@ -5,6 +5,7 @@ import Homes from "../Components/Home/Homes/Homes";
 import Login from "../Components/NavBar page/Login/Login";
 import Register from "../Components/NavBar page/Register/Register";
 import AddJob from "../Components/NavBar page/Add Job/AddJob";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -30,7 +31,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/AddJob',
-                element: <AddJob></AddJob>
+                element: <PrivateRoute><AddJob></AddJob></PrivateRoute>
             }
 
         ]

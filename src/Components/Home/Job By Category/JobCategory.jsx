@@ -20,7 +20,7 @@ const JobCategory = () => {
 
     return (
         <div className="mt-10">
-            <h1>Total Jobs: {jobs.length}</h1>
+            {/* <h1>Total Jobs: {jobs.length}</h1> */}
             <div className="">
                 <Tabs>
                     <TabList className='tab border-2 border-gray-400 ml-[502px] rounded-lg h-[50px]'>

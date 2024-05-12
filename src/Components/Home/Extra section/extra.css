@@ -111,4 +111,48 @@
       opacity: 0;
     }
 }
+
+
+.button21 {
+    width: 107px;
+    height: 35px;
+    color: #000;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    /* border: 2px solid #0c0c0c; */
+    border-radius: 12px;
+    position: relative;
+    /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1); */
+    transition: 0.3s ease all;
+    z-index: 1;
+    background-color: #23c0e9;
+}
+.button21:before {
+    transition: 0.5s all ease;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    opacity: 0;
+    content: "";
+    background-color: #3838ff;
+    z-index: -1;
+    border-radius: 7px;
+}
+.button21:hover {
+    color: #fff;
+}
+.button21:hover:before,
+.button21:focus:before {
+    transition: 0.5s all ease;
+    left: 0;
+    right: 0;
+    opacity: 1;
+}
+.button21:active {
+    transform: scale(0.9);
+}
   
