@@ -1,36 +1,59 @@
-import { useContext } from "react";
-import { AuthContext } from "../../../Providers/AuthProvider";
+// import { useContext } from "react";
+// import { AuthContext } from "../../../Providers/AuthProvider";
+
+import Swal from "sweetalert2";
+
+// import Swal from "sweetalert2";
 
 
 
 const AddJob = () => {
-    const { user } = useContext(AuthContext)
+    // const { user } = useContext(AuthContext)
 
 
-    const handleAddItem = event => {
+    const handleAddJob = event => {
         event.preventDefault()
 
         const form = event.target
 
-        const itemName = form.item_name.value
-        const subcategoryName = form.subcategory_Name.value
-        const shortDescription = form.short_description.value
-        const processingTime = form.processing_time.value
-        const userName = form.User_Name.value
-        const price = form.price.value
-        const rating = form.rating.value
-        const photoURL = form.photoURL.value
-        const customization = form.customization.value
-        const userEmail = form.User_Email.value
-        const stockStatus = form.stockStatus.value
-        const email = user.email
+        const job_title = form.job_title.value
+        const job_category = form.job_category.value
+        const salary_range = form.salary_range.value
+        const job_description = form.job_description.value
+        const user_name = form.user_name.value
+        const job_posting_date = form.job_posting_date.value
+        const application_deadline = form.application_deadline.value
+        const job_applicants_number = form.job_applicants_number.value
+        const user_email = form.user_email.value
+        const job_banner_url = form.job_banner_url.value
+        // const email = user.email
+        // const displayName = user.displayName
 
-        const newItem = { itemName, subcategoryName, shortDescription, processingTime, userName, price, rating, photoURL, customization, userEmail, stockStatus, email }
+        const newJob = { job_title, job_category, salary_range, job_description, user_name, job_posting_date, application_deadline, job_applicants_number, user_email, job_banner_url }
 
-        console.log(newItem)
+        console.log(newJob)
 
         // send data to the server
-       
+
+        fetch('http://localhost:5000/job', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newJob)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: "Item Added Successfully",
+                        // text: "Please, Go To Login Page and Login Now",
+                        icon: "success"
+                    });
+                }
+            })
+
     }
 
 
@@ -43,27 +66,27 @@ const AddJob = () => {
 
                 <div className=" md:w-1/3 mt-10 mb-10">
 
-                    <form onSubmit={handleAddItem}>
+                    <form onSubmit={handleAddJob}>
                         <div>
                             <div className="lg:flex md:flex gap-16">
                                 <div>
-                                    <input className="mb-10 lg:w-[470px] md:w-[260px] py-2 px-4 border-2 border-gray-300 rounded-md" type="name" placeholder="Item Name" name="item_name" id="" required />
+                                    <input className="mb-10 lg:w-[470px] md:w-[260px] py-2 px-4 border-2 border-gray-300 rounded-md" type="name" placeholder="Job Title" name="job_title" id="" required />
 
                                     <br />
 
-                                    <input className="mb-10 lg:w-[470px] md:w-[260px] py-2 px-4 border-2 border-gray-300 rounded-md" type="text" placeholder="Subcategory Name" name="subcategory_Name" id="" required />
+                                    <input className="mb-10 lg:w-[470px] md:w-[260px] py-2 px-4 border-2 border-gray-300 rounded-md" type="text" placeholder="Job Category" name="job_category" id="" required />
 
                                     <br />
 
-                                    <input className="mb-10 lg:w-[470px] md:w-[260px] py-2 px-4 border-2 border-gray-300 rounded-md" type="text" placeholder="Short Description" name="short_description" id="" required />
+                                    <input className="mb-10 lg:w-[470px] md:w-[260px] py-2 px-4 border-2 border-gray-300 rounded-md" type="text" placeholder="Salary range" name="salary_range" id="" required />
 
                                     <br />
 
-                                    <input className="mb-10 lg:w-[470px] md:w-[260px] py-2 px-4 border-2 border-gray-300 rounded-md" type="text" placeholder="Processing Time" name="processing_time" id="" required />
+                                    <input className="mb-10 lg:w-[470px] md:w-[260px] py-2 px-4 border-2 border-gray-300 rounded-md" type="text" placeholder="Job Description" name="job_description" id="" required />
 
                                     <br />
 
-                                    <input className="mb-10 lg:w-[470px] md:w-[260px] py-2 px-4 border-2 border-gray-300 rounded-md" type="name" placeholder="User Name" name="User_Name" id="" required />
+                                    <input className="mb-10 lg:w-[470px] md:w-[260px] py-2 px-4 border-2 border-gray-300 rounded-md" type="name" placeholder="User Name" name="user_name" id="" required />
 
                                     <br />
 
@@ -73,33 +96,29 @@ const AddJob = () => {
                                 {/*  */}
 
                                 <div>
-                                    <input className="mb-10 lg:w-[470px] md:w-[260px] py-2 px-4 border-2 border-gray-300 rounded-md" type="text" placeholder="Price" name="price" id="" required />
+                                    <input className="mb-10 lg:w-[470px] md:w-[260px] py-2 px-4 border-2 border-gray-300 rounded-md" type="text" placeholder="Job Posting Date" name="job_posting_date" id="" required />
 
                                     <br />
 
-                                    <input className="mb-10 lg:w-[470px] md:w-[260px] py-2 px-4 border-2 border-gray-300 rounded-md" type="text" placeholder="Rating" name="rating" id="" required />
+                                    <input className="mb-10 lg:w-[470px] md:w-[260px] py-2 px-4 border-2 border-gray-300 rounded-md" type="text" placeholder="Application Deadline" name="application_deadline" id="" required />
 
                                     <br />
 
-                                    <input className="mb-10 lg:w-[470px] md:w-[260px] py-2 px-4 border-2 border-gray-300 rounded-md" type="photoURL" placeholder="Image ( Use Image URL)" name="photoURL" id="" required />
+                                    <input className="mb-10 lg:w-[470px] md:w-[260px] py-2 px-4 border-2 border-gray-300 rounded-md" type="photoURL" placeholder="Job Banner ( Use Image URL)" name="job_banner_url" id="" required />
 
                                     <br />
 
-                                    <input className="mb-10 lg:w-[470px] md:w-[260px] py-2 px-4 border-2 border-gray-300 rounded-md" type="text" placeholder="Customization" name="customization" id="" required />
+                                    <input className="mb-10 lg:w-[470px] md:w-[260px] py-2 px-4 border-2 border-gray-300 rounded-md" type="text" placeholder="Job Applicants Number" name="job_applicants_number" id="" required />
 
                                     <br />
 
-                                    <input className="mb-10 lg:w-[470px] md:w-[260px] py-2 px-4 border-2 border-gray-300 rounded-md" type="email" placeholder="User Email" name="User_Email" id="" required />
+                                    <input className="mb-10 lg:w-[470px] md:w-[260px] py-2 px-4 border-2 border-gray-300 rounded-md" type="email" placeholder="User Email" name="user_email" id="" required />
                                 </div>
                             </div>
 
                             <div>
-                                <div className="relative">
-                                    <input className=" lg:w-[1001px] md:w-[580px] py-2 px-4 border-2 border-gray-300 rounded-md" type="text" placeholder="Stock Status" name="stockStatus" id="" required />
-                                </div>
-
                                 <br />
-                                <input className="cursor-pointer ml-10 lg:ml-0 md:ml-0 mt-10 lg:w-[1001px] md:w-[580px] py-2 px-4 border-2 rounded-md border-gray-300 bg-blue-500 text-white text-lg font-medium" type="submit" value="ADD NOW" />
+                                <input className="cursor-pointer ml-10 lg:ml-0 md:ml-0 mt-1 lg:w-[1001px] md:w-[580px] py-2 px-4 border-2 rounded-md border-gray-300 bg-blue-500 text-white text-lg font-medium" type="submit" value="ADD NOW" />
                             </div>
 
                         </div>

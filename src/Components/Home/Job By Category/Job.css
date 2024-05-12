@@ -1,0 +1,80 @@
+/* CSS */
+.active-tab {
+     /* Adjust the duration and easing function as needed */
+    /* opacity: 1; */
+    color: blue;
+    font-weight: 700;
+    
+}
+
+
+.card13 {
+    position: relative;
+    width: 180px;
+    height: 264px;
+    color: black;
+    background-color: #f5f5f5;
+    font-family: "Inter", sans-serif;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: all 0.4s ease-in-out;
+    overflow: hidden;
+  }
+  
+  .card13 a {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: #5f03f4;
+  }
+  
+  .card13-details a::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+    content: "";
+  }
+  
+  .card13 h1 {
+    margin-top: 0px;
+    margin-bottom: 6px;
+    font-size: 22px;
+    font-weight: bold;
+  }
+  
+  .card13 img {
+    transition: transform 0.4s ease-in-out;
+    width: 100%;
+    height: auto;
+  }
+  
+  .card13-details {
+    padding: 14px;
+  }
+  .card13-details p {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  
+  .card13 a .card13-icon {
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    margin-top: 1px;
+    transform: translateX(-20px);
+    opacity: 0;
+    transition: all 0.3s;
+  }
+  
+  .card13:hover .card13-img img {
+    transform: scale(1.1);
+  }
+  
+  .card13:hover a .card13-icon,
+  .card13:focus a .card13-icon {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  
