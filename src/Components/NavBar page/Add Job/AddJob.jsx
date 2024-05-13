@@ -1,14 +1,14 @@
-// import { useContext } from "react";
-// import { AuthContext } from "../../../Providers/AuthProvider";
 
 import Swal from "sweetalert2";
+import { AuthContext } from "../../../Providers/AuthProvider";
+import { useContext } from "react";
 
 // import Swal from "sweetalert2";
 
 
 
 const AddJob = () => {
-    // const { user } = useContext(AuthContext)
+    const { user } = useContext(AuthContext)
 
 
     const handleAddJob = event => {
@@ -26,10 +26,10 @@ const AddJob = () => {
         const job_applicants_number = form.job_applicants_number.value
         const user_email = form.user_email.value
         const job_banner_url = form.job_banner_url.value
-        // const email = user.email
-        // const displayName = user.displayName
+        const email = user.email
+        const displayName = user.displayName
 
-        const newJob = { job_title, job_category, salary_range, job_description, user_name, job_posting_date, application_deadline, job_applicants_number, user_email, job_banner_url }
+        const newJob = { job_title, job_category, salary_range, job_description, user_name, job_posting_date, application_deadline, job_applicants_number, user_email, job_banner_url, email, displayName }
 
         console.log(newJob)
 

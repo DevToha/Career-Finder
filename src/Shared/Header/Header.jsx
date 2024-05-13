@@ -16,12 +16,12 @@ const Header = () => {
 
     const links = <>
         <li><NavLink to="/"><span className="text-lg font-semibold">Home</span></NavLink></li>
-        <li><NavLink to="/AddCraft"><span className="text-lg font-semibold">All Jobs</span></NavLink></li>
-        <li><NavLink to="/MyArtCraft"><span className="text-lg font-semibold">Applied Jobs</span></NavLink></li>
+        <li><NavLink to="/AllJob"><span className="text-lg font-semibold">All Jobs</span></NavLink></li>
+        <li><NavLink to="/AppliedJob"><span className="text-lg font-semibold">Applied Jobs</span></NavLink></li>
         <li><NavLink to="/AddJob"><span className="text-lg font-semibold">Add A Job</span></NavLink></li>
-        <li><NavLink to="/MyArtCraft"><span className="text-lg font-semibold">My Jobs</span></NavLink></li>
+        <li><NavLink to="/MyJob"><span className="text-lg font-semibold">My Jobs</span></NavLink></li>
         <li><NavLink to="/Blogs"><span className="text-lg font-semibold">Blogs</span></NavLink></li>
-        <li><NavLink to="/Blog"><span className="text-lg font-semibold">User Profile</span></NavLink></li>
+        {/* <li><NavLink to="/Blog"><span className="text-lg font-semibold">User Profile</span></NavLink></li> */}
         {/* <li><NavLink to="/TopRatedBook">Catalog</NavLink></li> */}
 
     </>
@@ -71,17 +71,17 @@ const Header = () => {
                     <ul className=" menu-horizontal px-1 font-medium ">
                         <li><NavLink to="/"><span className="text-lg font-semibold">Home</span></NavLink></li>
 
-                        <li><NavLink to="/AddCraft"><span className="text-lg font-semibold mx-8">All Jobs</span></NavLink></li>
+                        <li><NavLink to="/AllJob"><span className="text-lg font-semibold mx-8">All Jobs</span></NavLink></li>
 
-                        <li><NavLink to="/MyArtCraft"><span className="text-lg font-semibold">Applied Jobs</span></NavLink></li>
+                        <li><NavLink to="/AppliedJob"><span className="text-lg font-semibold">Applied Jobs</span></NavLink></li>
 
                         <li><NavLink to="/AddJob"><span className="text-lg mx-8 font-semibold">Add A Job</span></NavLink></li>
 
-                        <li><NavLink to="/MyArtCraft"><span className="text-lg font-semibold">My Jobs</span></NavLink></li>
+                        <li><NavLink to="/MyJob"><span className="text-lg font-semibold">My Jobs</span></NavLink></li>
 
                         <li><NavLink to="/Blogs"><span className="text-lg mx-8 font-semibold">Blogs</span></NavLink></li>
 
-                        <li><NavLink to="/Blog"><span className="text-lg font-semibold">User Profile</span></NavLink></li>
+                        {/* <li><NavLink to="/Blog"><span className="text-lg font-semibold">User Profile</span></NavLink></li> */}
 
                     </ul>
 

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import './Job.css'
+import { Link } from "react-router-dom";
 
 const JobCategory = () => {
 
@@ -36,6 +37,9 @@ const JobCategory = () => {
                         {filterJobsByCategory("On Site").slice(0, 2).map(job => (
                             <div key={job._id} className="mt-5 border-2 border-black w-[1100px] h-[300px] ml-[200px] rounded-xl">
                                 Name: {job.job_title}
+                                <Link to={`/ViewDetail/${job._id}`}>
+                                    <button className="btn">View Details</button>
+                                </Link>
                             </div>
                         ))}
                     </TabPanel>
