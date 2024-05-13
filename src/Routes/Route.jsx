@@ -12,11 +12,12 @@ import AppliedJob from "../Components/NavBar page/Applied job/AppliedJob";
 import MyJob from "../Components/NavBar page/My job page/MyJob";
 import MyJobs from "../Components/NavBar page/My job page/MyJobs";
 import Update from "../Components/NavBar page/My job page/Update";
+import Error from "../Error Page/Error";
 
 const router = createBrowserRouter([
     {
         path: "/",
-        // errorElement: <ErrorPage></ErrorPage>,
+        errorElement: <Error></Error>,
         element: <Root></Root>,
         children: [
             {
