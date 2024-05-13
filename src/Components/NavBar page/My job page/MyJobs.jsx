@@ -2,11 +2,11 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
+// import { FaBookmark } from "react-icons/fa";
 
+const MyJobs = ({ p, setItem, item }) => {
 
-const MyJobs = ({ p,setItem, item }) => {
-
-    const { _id, job_title } = p;
+    const { _id, job_title, salary_range, job_posting_date, user_name, application_deadline, job_applicants_number, job_banner_url,job_description } = p;
 
     const handleDelete = _id => {
         console.log(_id)
@@ -53,12 +53,40 @@ const MyJobs = ({ p,setItem, item }) => {
     }
 
     return (
-        <div className='text-center'>
-            <h1>{job_title}</h1>
-            <button onClick={() => handleDelete(_id)} className='btn-primary btn mr-5 mt-5 mb-5'>Delete</button>
-            <Link to='/Update'>
-                <button className='btn-warning btn'>Update</button>
-            </Link>
+        <div className='mb-8'>
+            {/* <h1>{job_title}</h1> */}
+
+            <div key={_id} className="mt-5">
+                <div className="mt-5 border-2 border-[#00e2bd] w-[1100px] h-[350px] ml-[200px] rounded-xl">
+                    <div className="flex gap-10 pl-[50px]">
+                        <div className="mt-[36px]">
+                            <img className="w-[250px] h-[200px] rounded-xl" src={job_banner_url} alt="" />
+                        </div>
+                        <div className="mt-[40px]">
+                            <p className="text-2xl font-semibold mb-5">{job_title}</p>
+                            <p className="text-base font-medium mb-5">Posted By : {user_name}</p>
+                            <p className="text-base font-medium mb-5">Description : {job_description}</p>
+                            <p className="flex gap-[330px]">
+                                <p className="text-base font-semibold">Salary : {salary_range}</p>
+
+                                <div>
+                                    <button onClick={() => handleDelete(_id)} className='btn-warning btn mr-5 mt-5 mb-5'>Delete</button>
+                                    <Link to={`/Update/${_id}`}>
+                                        <button className='btn-primary btn'>Update</button>
+                                    </Link>
+                                </div>
+                            </p>
+                        </div>
+                    </div>
+                    <div className="rounded-b-xl h-[80px] pt-[23px] bg-[#00e2bd]">
+                        <div className="flex gap-10 pl-[140px]">
+                            <p className="text-base font-semibold">Posting Date : {job_posting_date}</p>
+                            <p className="text-base font-semibold">Application Deadline : {application_deadline}</p>
+                            <p className="text-base font-semibold">Total Number Of Applicants : {job_applicants_number}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </div>
     );

@@ -11,7 +11,7 @@ const Banner = () => {
             <div className='relative'>
                 <img className='h-[680px]' src={image} alt="" />
             </div>
-            <div className='absolute top-[130px] left-[930px]'>
+            <div className='absolute top-[123px] left-[930px]'>
                 <img src={image1} alt="" />
             </div>
 
