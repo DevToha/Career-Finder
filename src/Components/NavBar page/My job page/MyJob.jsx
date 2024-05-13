@@ -9,8 +9,6 @@ const MyJob = () => {
 
     const [item, setItem] = useState()
 
-    // const [items, setItems] = useState(setItem)
-
     useEffect(() => {
         fetch(`http://localhost:5000/myJob/${user?.email}`)
             .then(res => res.json())
@@ -19,13 +17,12 @@ const MyJob = () => {
             })
     }, [user])
 
-    // item={item} setItem={setItem}
-    
+
     return (
         <div>
             <h2 className="text-center font-bold text-4xl lg:mb-10 mb-5 mt-10">My Art And Craft Item</h2>
             {
-                item?.map(p => (<MyJobs key={p._id} p={p}></MyJobs>))
+                item?.map(p => (<MyJobs key={p._id} p={p} item={item} setItem={setItem}></MyJobs>))
             }
         </div>
     );
