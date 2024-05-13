@@ -2,11 +2,31 @@ import { Link, NavLink } from "react-router-dom";
 import './Header.css'
 import image from './Image/icon.png'
 import { AuthContext } from "../../Providers/AuthProvider";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 
 const Header = () => {
 
     const { user, logOut } = useContext(AuthContext)
+
+    const [theme, setTheme] = useState('light')
+
+    useEffect(() => {
+        localStorage.setItem('theme', theme)
+        const localTheme = localStorage.getItem('theme')
+        document.querySelector('html').setAttribute('data-theme', localTheme)
+    }, [theme])
+
+    const handleToggle = e => {
+        console.log(e.target.value)
+        if (e.target.checked) {
+            setTheme('dark')
+        }
+        else {
+            setTheme('light')
+        }
+    }
+
+    console.log(theme)
 
     const handleSignOut = () => {
         logOut()
@@ -21,7 +41,6 @@ const Header = () => {
         <li><NavLink to="/AddJob"><span className="text-lg font-semibold">Add A Job</span></NavLink></li>
         <li><NavLink to="/MyJob"><span className="text-lg font-semibold">My Jobs</span></NavLink></li>
         <li><NavLink to="/Blogs"><span className="text-lg font-semibold">Blogs</span></NavLink></li>
-        {/* <li><NavLink to="/Blog"><span className="text-lg font-semibold">User Profile</span></NavLink></li> */}
         {/* <li><NavLink to="/TopRatedBook">Catalog</NavLink></li> */}
 
     </>
@@ -85,9 +104,23 @@ const Header = () => {
 
                     </ul>
 
+                    <div className="relative left-60">
+                        <label className="flex cursor-pointer gap-2">
+                            {/* sun icon */}
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="5" /><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" /></svg>
+
+                            <input onChange={handleToggle} type="checkbox" className="toggle theme-controller" />
+
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+
+                        </label>
+                    </div>
+
                     <div className="">
 
                         <div className="">
+                            
+
                             {
                                 user && <span className="ml-[350px] mt-1 absolute lg:inline md:inline hidden cursor-pointer w-[45px] mr-5 rounded-full h-[45px]"><img className="rounded-full relative right-16  w-[45px] h-[45px]" src={user.photoURL} alt="" title={user.displayName} /></span>
                             }
