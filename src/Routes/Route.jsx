@@ -13,6 +13,8 @@ import MyJob from "../Components/NavBar page/My job page/MyJob";
 import MyJobs from "../Components/NavBar page/My job page/MyJobs";
 import Update from "../Components/NavBar page/My job page/Update";
 import Error from "../Error Page/Error";
+import AppliedJobs from "../Components/NavBar page/Applied job/AppliedJobs";
+
 
 const router = createBrowserRouter([
     {
@@ -46,7 +48,11 @@ const router = createBrowserRouter([
             },
             {
                 path: '/AppliedJob',
-                element: <AppliedJob></AppliedJob>
+                element: <PrivateRoute><AppliedJob></AppliedJob></PrivateRoute>
+            },
+            {
+                path: '/AppliedJobs',
+                element: <PrivateRoute><AppliedJobs></AppliedJobs></PrivateRoute>
             },
             {
                 path: '/MyJob',
