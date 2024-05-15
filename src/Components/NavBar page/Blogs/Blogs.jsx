@@ -2,7 +2,7 @@
 
 const Blogs = () => {
     return (
-        <div className="border-2 bg-gray-300 w-[1300px] h-auto py-10 px-16 mt-10 rounded-xl border-gray-400 ml-[108px]">
+        <div className="border-2 bg-gray-300 lg:w-[1300px] h-auto py-10 px-16 mt-10 rounded-xl border-gray-400 lg:ml-[108px]">
             <div>
                 <div>
                     <h1 className="text-2xl font-extrabold mb-3">First Question</h1>

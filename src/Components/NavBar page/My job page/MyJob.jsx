@@ -69,8 +69,8 @@ const MyJob = () => {
             <h1 className="text-3xl font-semibold text-center mb-10 text-[#00e2bd]">Here You Can See Your All Job, You Have Added</h1>
             
             <div className='mb-8'>
-                <div className="px-16">
-                    <div className="mt-10 w-[] h-auto border px-16 mx-auto rounded-lg pt-10 pb-20 bg-slate-400">
+                <div className="lg:px-16 md:px-5">
+                    <div className="mt-10 w-[] h-auto border lg:px-16 md:px-5 mx-auto rounded-lg pt-10 pb-20 bg-slate-400">
                         <div className="overflow-x-auto ">
                             <table className="table">
                                 <thead>

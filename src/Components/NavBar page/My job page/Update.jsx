@@ -61,7 +61,7 @@ const Update = () => {
     return (
         <div>
             <div>
-                <div className="bg-[#3b7f9188] shadow8 py-5 pl-[92px] md:ml-0 lg:ml-[160px] mt-10 rounded-3xl lg:w-[1215px]">
+                <div className="bg-[#3b7f9188] shadow8 py-5 lg:pl-[92px] md:pl-[92px] pl-[70px] md:ml-0 lg:ml-[160px] mt-10 rounded-3xl lg:w-[1215px]">
 
                     <h3 className="text-3xl font-semibold lg:ml-[355px] md:ml-[150px]">Lets Update Your job</h3>
 

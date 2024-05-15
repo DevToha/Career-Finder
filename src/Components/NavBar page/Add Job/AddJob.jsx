@@ -67,7 +67,7 @@ const AddJob = () => {
 
     return (
         <div>
-            <div className="bg-[#3b7f9188] shadow8 py-5 pl-[92px] md:ml-0 lg:ml-[160px] mt-10 rounded-3xl lg:w-[1215px]">
+            <div className="bg-[#3b7f9188] shadow8 py-5 lg:pl-[92px] md:pl-[92px] pl-[80px] md:ml-0 lg:ml-[160px] mt-10 rounded-3xl lg:w-[1215px]">
                 <h3 className="text-3xl font-semibold lg:ml-[355px] md:ml-[150px]">Lets Add Some JOB!</h3>
                 <div className=" md:w-1/3 mt-10 mb-10">
                     <form onSubmit={handleAddJob}>

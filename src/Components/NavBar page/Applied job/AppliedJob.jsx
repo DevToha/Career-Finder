@@ -15,8 +15,8 @@ const AppliedJob = () => {
     }, [user]);
 
     return (
-        <div className="px-16">
-            <div className="mt-10 w-[] h-auto border px-16 mx-auto rounded-lg pt-10 pb-20 bg-slate-400">
+        <div className="lg:px-16">
+            <div className="mt-10 w-[] h-auto border lg:px-16 mx-auto rounded-lg pt-10 pb-20 bg-slate-400">
                 <div className="overflow-x-auto ">
                     <table className="table">
                         <thead>

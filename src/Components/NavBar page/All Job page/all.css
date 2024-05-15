@@ -4,6 +4,7 @@
 
 .pagination button {
     margin-right: 10px;
+    margin-bottom: 10px;
     width: 90px;
     height: 41px;
     position: relative;
@@ -104,7 +105,7 @@
 
   
 .input2 {
-  width: 500px;
+  /* width: 500px; */
   height: 40px;
   font-size: 16px;
   color: black;
