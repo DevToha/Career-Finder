@@ -41,7 +41,7 @@ const ViewDetails = () => {
         console.log(newAppliedJob);
 
         // send data to the server
-        fetch('http://localhost:5000/appliedJob', {
+        fetch('https://assignment-11-server-five-puce.vercel.app/appliedJob', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

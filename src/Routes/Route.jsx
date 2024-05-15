@@ -43,7 +43,7 @@ const router = createBrowserRouter([
             {
                 path: '/AllJob',
                 element: <AllJob></AllJob>,
-                loader: () => fetch('http://localhost:5000/jobsCount')
+                loader: () => fetch('https://assignment-11-server-five-puce.vercel.app/jobsCount')
             },
             {
                 path: '/AppliedJob',
@@ -56,12 +56,12 @@ const router = createBrowserRouter([
             {
                 path: '/ViewDetail/:id',
                 element: <PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/job/${params.id}`)
+                loader: ({ params }) => fetch(`https://assignment-11-server-five-puce.vercel.app/job/${params.id}`)
             },
             {
                 path: '/Update/:id',
                 element: <PrivateRoute><Update></Update></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/job/${params.id}`)
+                loader: ({ params }) => fetch(`https://assignment-11-server-five-puce.vercel.app/job/${params.id}`)
             }
 
         ]

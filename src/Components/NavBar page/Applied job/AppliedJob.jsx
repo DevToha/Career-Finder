@@ -7,7 +7,7 @@ const AppliedJob = () => {
     const [items, setItems] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/appliedJob/${user?.email}`)
+        fetch(`https://assignment-11-server-five-puce.vercel.app/appliedJob/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setItems(data);

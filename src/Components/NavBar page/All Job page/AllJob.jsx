@@ -15,7 +15,7 @@ const AllJob = () => {
     const pages = [...Array(numberOfPages).keys()];
 
     useEffect(() => {
-        fetch(`http://localhost:5000/job?page=${currentPage}&size=${itemPerPage}`)
+        fetch(`https://assignment-11-server-five-puce.vercel.app/job?page=${currentPage}&size=${itemPerPage}`)
             .then(res => res.json())
             .then(data => {
                 setJobs(data);

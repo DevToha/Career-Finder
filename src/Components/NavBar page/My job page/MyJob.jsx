@@ -12,7 +12,7 @@ const MyJob = () => {
     const [item, setItem] = useState()
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myJob/${user?.email}`)
+        fetch(`https://assignment-11-server-five-puce.vercel.app/myJob/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setItem(data)
@@ -38,7 +38,7 @@ const MyJob = () => {
                 //     icon: "success"
                 //   });
 
-                fetch(`http://localhost:5000/job/${_id}`, {
+                fetch(`https://assignment-11-server-five-puce.vercel.app/job/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
