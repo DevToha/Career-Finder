@@ -6,7 +6,7 @@ const TopCompany = () => {
     return (
         <div className="mt-10">
             <h1 className="text-2xl font-semibold text-center">TOP HIRING COMPANIES</h1>
-            <div className='flex gap-6 px-3'>
+            <div className='lg:flex md:grid md:grid-cols-2 gap-6 px-3 md:ml-12 lg:ml-0 ml-9'>
                 <motion.div
                     className="mt-6 border cursor-pointer border-gray-300 rounded-md w-[280px] h-[280px] items-center text-center justify-center pt-[28px]"
                     whileHover={{ scale: 1.05 }} // Scale up on hover

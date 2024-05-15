@@ -49,7 +49,7 @@ const Header = () => {
         <div className="">
             <div className="lg:navbar md:navbar bg-white">
                 <div className="navbar-start-Custom">
-                    <div className="dropdown md:top-[2px] ">
+                    <div className=" relative top-12 md:top-0 dropdown ml-4">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 md:w-[40px] md:h-[40px]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </div>
@@ -66,7 +66,7 @@ const Header = () => {
                                         user ?
                                             <button onClick={handleSignOut} className="button40">LOG OUT</button>
                                             :
-                                            <div className="flex gap-4 ml-[100px] md:mt-0 sm:mt-10 lg:mt-0">
+                                            <div className="">
                                                 <Link to="/login">
                                                     <button className="button40 lg:mb-0 md:mb-0 mb-5">LOGIN</button>
                                                 </Link>
@@ -80,9 +80,9 @@ const Header = () => {
                         </ul>
                     </div>
 
-                    <div className="lg:ml-10 md:ml-10 sm:ml-0 flex items-center gap-3">
-                        <p><img className="w-[53px] h-[]" src={image} alt="" /></p>
-                        <p className="text-3xl font-semibold animation ">Career Finder</p>
+                    <div className="lg:ml-0 md:ml-10 ml-9 lg:flex items-center gap-3 relative left-28 lg:left-0 md:left-[300px]">
+                        <p className="relative md:top-9 md:left-16 lg:left-0 lg:top-0"><img className="lg:w-[53px] w-[45px] h-[]" src={image} alt="" /></p>
+                        <p className="text-3xl font-semibold relative lg:left-0 md:left-36 lg:bottom-0 md:bottom-5 left-16 bottom-14">Career Finder</p>
                     </div>
 
                 </div>
@@ -129,7 +129,7 @@ const Header = () => {
                                 user ?
                                     <button onClick={handleSignOut} className="ml-[350px]  button40">LOG OUT</button>
                                     :
-                                    <div className="flex gap-4 ml-[150px] md:mt-0 sm:mt-10 lg:mt-0">
+                                    <div className="flex gap-4 ml-[286px] md:mt-0 sm:mt-10 lg:mt-0">
                                         <Link to="/login">
                                             <button className="button40 lg:mb-0 md:mb-0 mb-5">LOGIN</button>
                                         </Link>

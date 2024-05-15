@@ -5,8 +5,8 @@ const PricingPlan = () => {
         <div className="mt-10">
             <h1 className="text-2xl font-semibold text-center mb-10">PRICING PLAN</h1>
 
-            <div className='flex gap-12 justify-center'>
-                <div className="card3">
+            <div className='lg:flex lg:gap-12 gap-2 md:grid md:grid-cols-2 justify-center'>
+                <div className="card3  mb-5">
                     <span className="card3-title">BASIC PLAN</span>
                     <p className="card3-description border-y mb-14 bg-[#00e2bd] w-[] h-[160px] pt-[41px]"><span className='text-6xl font-extrabold text-white'>$29</span> <br />/ Per Month</p>
                     <div className='text-lg font-medium'>
@@ -23,7 +23,7 @@ const PricingPlan = () => {
 
                 {/*  */}
 
-                <div className="card3">
+                <div className="card3 mb-5">
                     <span className="card3-title">PREMIUM PLAN</span>
                     <p className="card3-description border-y mb-14 bg-[#00e2bd] w-[] h-[160px] pt-[41px]"><span className='text-6xl font-extrabold text-white'>$49</span> <br />/ Per Month</p>
                     <div className='text-lg font-medium'>

@@ -46,7 +46,7 @@ const JobCategory = () => {
             {/* <h1>Total Jobs: {jobs.length}</h1> */}
             <div className="">
                 <Tabs>
-                    <TabList className='tab border-2 border-gray-400 ml-[512px] rounded-lg h-[50px]'>
+                    <TabList className='tab border-2 border-gray-400 lg:ml-[512px] md:ml-[150px] ml-0 rounded-lg lg:h-[50px] md:h-[50px] h-[100px]'>
                         <Tab selectedClassName="active-tab">On-Site Job</Tab>
                         <Tab selectedClassName="active-tab">Remote Job</Tab>
                         <Tab selectedClassName="active-tab">Hybrid</Tab>
@@ -57,34 +57,34 @@ const JobCategory = () => {
                     <TabPanel>
                         {/* <h2 className="mt-5">On-Site Jobs</h2> */}
                         {filterJobsByCategory("On Site").slice(0, 2).map(job => (
-                            <div key={job._id} className="mt-5 border-2 border-[#00e2bd] w-[1100px] h-[300px] ml-[200px] rounded-xl">
-                                <div className="flex gap-10 pl-[100px]">
-                                    <div className="mt-[36px]">
+                            <div key={job._id} className="mt-5 border-2 border-[#00e2bd] lg:w-[1100px] lg:h-[300px] h-auto lg:ml-[200px] rounded-xl">
+                                <div className="lg:flex gap-10 lg:pl-[100px]">
+                                    <div className="mt-[36px] ml-28 lg:ml-0 md:ml-[300px]">
                                         <img className="w-[150px] h-[150px] rounded-xl" src={job.job_banner_url} alt="" />
                                     </div>
-                                    <div className="mt-[40px]">
+                                    <div className="mt-[40px] ml-20 lg:ml-0 md:ml-[280px]">
                                         <p className="text-2xl font-semibold mb-5">{job.job_title}</p>
                                         <p className="text-base font-medium mb-5 text-[#00e2bd]">Posted By : {job.user_name}</p>
-                                        <p className="flex gap-[380px]">
+                                        <p className="lg:flex lg:gap-[380px]">
                                             <p className="text-base font-semibold">Salary : {job.salary_range}</p>
 
                                             <Link to={`/ViewDetail/${job._id}`} onClick={(event) => handleViewDetails(job._id, event)}>
-                                                <button className="button22">View Details</button>
+                                                <button className="button22 lg:mt-0 md:mt-7  mt-5 ml-9 lg:ml-0 md:ml-9">View Details</button>
                                             </Link>
                                         </p>
                                     </div>
                                 </div>
 
-                                <div className="rounded-b-xl h-[80px] pt-[23px] bg-[#00e2bd] mt-8">
-                                    <div className="flex gap-10 pl-[50px]">
+                                <div className="rounded-b-xl lg:h-[80px] pt-[23px] lg:pb-0 md:pb-0 pb-5 bg-[#00e2bd] mt-8">
+                                    <div className="flex lg:gap-10 gap-6 lg:pl-[50px] md:pl-6 pl-5">
 
-                                        <p className="text-lg gap-5 mr-14 font-medium flex text-center justify-center items-center">
+                                        <p className="text-lg lg:gap-5 lg:mr-14 mr-2 font-medium flex  text-center justify-center items-center lg:inline md:inline hidden">
                                             <p><FaBookmark /></p>
                                             <p>Note</p>
                                         </p>
                                         <p className="text-base font-semibold">Posting Date : {job.job_posting_date}</p>
                                         <p className="text-base font-semibold">Application Deadline : {job.application_deadline}</p>
-                                        <p className="text-base font-semibold">Total Number Of Applicants : {job.job_applicants_number}</p>
+                                        <p className="text-base font-semibold lg:inline md:inline hidden">Total Number Of Applicants : {job.job_applicants_number}</p>
                                     </div>
                                 </div>
                             </div>
@@ -94,105 +94,108 @@ const JobCategory = () => {
                     <TabPanel>
                         {/* <h2 className="mt-5">Remote Jobs</h2> */}
                         {filterJobsByCategory("Remote").slice(0, 2).map(job => (
-                            <div key={job._id} className="mt-5 border-2 border-[#00e2bd] w-[1100px] h-[300px] ml-[200px] rounded-xl">
-                                <div className="flex gap-10 pl-[100px]">
-                                    <div className="mt-[36px]">
-                                        <img className="w-[150px] h-[150px] rounded-xl" src={job.job_banner_url} alt="" />
-                                    </div>
-                                    <div className="mt-[40px]">
-                                        <p className="text-2xl font-semibold mb-5">{job.job_title}</p>
-                                        <p className="text-base font-medium mb-5 text-[#00e2bd]">Posted By : {job.user_name}</p>
-                                        <p className="flex gap-[380px]">
-                                            <p className="text-base font-semibold">Salary : {job.salary_range}</p>
-
-                                            <Link to={`/ViewDetail/${job._id}`} onClick={(event) => handleViewDetails(job._id, event)}>
-                                                <button className="button22">View Details</button>
-                                            </Link>
-                                        </p>
-                                    </div>
+                            <div key={job._id} className="mt-5 border-2 border-[#00e2bd] lg:w-[1100px] lg:h-[300px] h-auto lg:ml-[200px] rounded-xl">
+                            <div className="lg:flex gap-10 lg:pl-[100px]">
+                                <div className="mt-[36px] ml-28 lg:ml-0 md:ml-[300px]">
+                                    <img className="w-[150px] h-[150px] rounded-xl" src={job.job_banner_url} alt="" />
                                 </div>
-                                <div className="rounded-b-xl h-[80px] pt-[23px] bg-[#00e2bd] mt-8">
-                                    <div className="flex gap-10 pl-[50px]">
+                                <div className="mt-[40px] ml-20 lg:ml-0 md:ml-[280px]">
+                                    <p className="text-2xl font-semibold mb-5">{job.job_title}</p>
+                                    <p className="text-base font-medium mb-5 text-[#00e2bd]">Posted By : {job.user_name}</p>
+                                    <p className="lg:flex lg:gap-[380px]">
+                                        <p className="text-base font-semibold">Salary : {job.salary_range}</p>
 
-                                        <p className="text-lg gap-5 mr-14 font-medium flex text-center justify-center items-center">
-                                            <p><FaBookmark /></p>
-                                            <p>Note</p>
-                                        </p>
-                                        <p className="text-base font-semibold">Posting Date : {job.job_posting_date}</p>
-                                        <p className="text-base font-semibold">Application Deadline : {job.application_deadline}</p>
-                                        <p className="text-base font-semibold">Total Number Of Applicants : {job.job_applicants_number}</p>
-                                    </div>
+                                        <Link to={`/ViewDetail/${job._id}`} onClick={(event) => handleViewDetails(job._id, event)}>
+                                            <button className="button22 lg:mt-0 md:mt-7  mt-5 ml-9 lg:ml-0 md:ml-9">View Details</button>
+                                        </Link>
+                                    </p>
                                 </div>
                             </div>
+
+                            <div className="rounded-b-xl lg:h-[80px] pt-[23px] lg:pb-0 md:pb-0 pb-5 bg-[#00e2bd] mt-8">
+                                <div className="flex lg:gap-10 gap-6 lg:pl-[50px] md:pl-6 pl-5">
+
+                                    <p className="text-lg lg:gap-5 lg:mr-14 mr-2 font-medium flex  text-center justify-center items-center lg:inline md:inline hidden">
+                                        <p><FaBookmark /></p>
+                                        <p>Note</p>
+                                    </p>
+                                    <p className="text-base font-semibold">Posting Date : {job.job_posting_date}</p>
+                                    <p className="text-base font-semibold">Application Deadline : {job.application_deadline}</p>
+                                    <p className="text-base font-semibold lg:inline md:inline hidden">Total Number Of Applicants : {job.job_applicants_number}</p>
+                                </div>
+                            </div>
+                        </div>
                         ))}
                     </TabPanel>
 
                     <TabPanel>
                         {/* <h2 className="mt-5">Hybrid Jobs</h2> */}
                         {filterJobsByCategory("Hybrid").slice(0, 2).map(job => (
-                            <div key={job._id} className="mt-5 border-2 border-[#00e2bd] w-[1100px] h-[300px] ml-[200px] rounded-xl">
-                                <div className="flex gap-10 pl-[100px]">
-                                    <div className="mt-[36px]">
-                                        <img className="w-[150px] h-[150px] rounded-xl" src={job.job_banner_url} alt="" />
-                                    </div>
-                                    <div className="mt-[40px]">
-                                        <p className="text-2xl font-semibold mb-5">{job.job_title}</p>
-                                        <p className="text-base font-medium mb-5 text-[#00e2bd]">Posted By : {job.user_name}</p>
-                                        <p className="flex gap-[380px]">
-                                            <p className="text-base font-semibold">Salary : {job.salary_range}</p>
-
-                                            <Link to={`/ViewDetail/${job._id}`} onClick={(event) => handleViewDetails(job._id, event)}>
-                                                <button className="button22">View Details</button>
-                                            </Link>
-                                        </p>
-                                    </div>
+                            <div key={job._id} className="mt-5 border-2 border-[#00e2bd] lg:w-[1100px] lg:h-[300px] h-auto lg:ml-[200px] rounded-xl">
+                            <div className="lg:flex gap-10 lg:pl-[100px]">
+                                <div className="mt-[36px] ml-28 lg:ml-0 md:ml-[300px]">
+                                    <img className="w-[150px] h-[150px] rounded-xl" src={job.job_banner_url} alt="" />
                                 </div>
-                                <div className="rounded-b-xl h-[80px] pt-[23px] bg-[#00e2bd] mt-8">
-                                    <div className="flex gap-10 pl-[50px]">
+                                <div className="mt-[40px] ml-20 lg:ml-0 md:ml-[280px]">
+                                    <p className="text-2xl font-semibold mb-5">{job.job_title}</p>
+                                    <p className="text-base font-medium mb-5 text-[#00e2bd]">Posted By : {job.user_name}</p>
+                                    <p className="lg:flex lg:gap-[380px]">
+                                        <p className="text-base font-semibold">Salary : {job.salary_range}</p>
 
-                                        <p className="text-lg gap-5 mr-14 font-medium flex text-center justify-center items-center">
-                                            <p><FaBookmark /></p>
-                                            <p>Note</p>
-                                        </p>
-                                        <p className="text-base font-semibold">Posting Date : {job.job_posting_date}</p>
-                                        <p className="text-base font-semibold">Application Deadline : {job.application_deadline}</p>
-                                        <p className="text-base font-semibold">Total Number Of Applicants : {job.job_applicants_number}</p>
-                                    </div>
+                                        <Link to={`/ViewDetail/${job._id}`} onClick={(event) => handleViewDetails(job._id, event)}>
+                                            <button className="button22 lg:mt-0 md:mt-7  mt-5 ml-9 lg:ml-0 md:ml-9">View Details</button>
+                                        </Link>
+                                    </p>
                                 </div>
                             </div>
+
+                            <div className="rounded-b-xl lg:h-[80px] pt-[23px] lg:pb-0 md:pb-0 pb-5 bg-[#00e2bd] mt-8">
+                                <div className="flex lg:gap-10 gap-6 lg:pl-[50px] md:pl-6 pl-5">
+
+                                    <p className="text-lg lg:gap-5 lg:mr-14 mr-2 font-medium flex  text-center justify-center items-center lg:inline md:inline hidden">
+                                        <p><FaBookmark /></p>
+                                        <p>Note</p>
+                                    </p>
+                                    <p className="text-base font-semibold">Posting Date : {job.job_posting_date}</p>
+                                    <p className="text-base font-semibold">Application Deadline : {job.application_deadline}</p>
+                                    <p className="text-base font-semibold lg:inline md:inline hidden">Total Number Of Applicants : {job.job_applicants_number}</p>
+                                </div>
+                            </div>
+                        </div>
                         ))}
                     </TabPanel>
 
                     <TabPanel>
                         {/* <h2 className="mt-5">Part-Time Jobs</h2> */}
                         {filterJobsByCategory("Part-Time").slice(0, 2).map(job => (
-                            <div key={job._id} className="mt-5 border-2 border-[#00e2bd] w-[1100px] h-[300px] ml-[200px] rounded-xl">
-                                <div className="flex gap-10 pl-[100px]">
-                                    <div className="mt-[36px]">
+                            <div key={job._id} className="mt-5 border-2 border-[#00e2bd] lg:w-[1100px] lg:h-[300px] h-auto lg:ml-[200px] rounded-xl">
+                                <div className="lg:flex gap-10 lg:pl-[100px]">
+                                    <div className="mt-[36px] ml-28 lg:ml-0 md:ml-[300px]">
                                         <img className="w-[150px] h-[150px] rounded-xl" src={job.job_banner_url} alt="" />
                                     </div>
-                                    <div className="mt-[40px]">
+                                    <div className="mt-[40px] ml-20 lg:ml-0 md:ml-[280px]">
                                         <p className="text-2xl font-semibold mb-5">{job.job_title}</p>
                                         <p className="text-base font-medium mb-5 text-[#00e2bd]">Posted By : {job.user_name}</p>
-                                        <p className="flex gap-[380px]">
+                                        <p className="lg:flex lg:gap-[380px]">
                                             <p className="text-base font-semibold">Salary : {job.salary_range}</p>
 
                                             <Link to={`/ViewDetail/${job._id}`} onClick={(event) => handleViewDetails(job._id, event)}>
-                                                <button className="button22">View Details</button>
+                                                <button className="button22 lg:mt-0 md:mt-7  mt-5 ml-9 lg:ml-0 md:ml-9">View Details</button>
                                             </Link>
                                         </p>
                                     </div>
                                 </div>
-                                <div className="rounded-b-xl h-[80px] pt-[23px] bg-[#00e2bd] mt-8">
-                                    <div className="flex gap-10 pl-[50px]">
 
-                                        <p className="text-lg gap-5 mr-14 font-medium flex text-center justify-center items-center">
+                                <div className="rounded-b-xl lg:h-[80px] pt-[23px] lg:pb-0 md:pb-0 pb-5 bg-[#00e2bd] mt-8">
+                                    <div className="flex lg:gap-10 gap-6 lg:pl-[50px] md:pl-6 pl-5">
+
+                                        <p className="text-lg lg:gap-5 lg:mr-14 mr-2 font-medium flex  text-center justify-center items-center lg:inline md:inline hidden">
                                             <p><FaBookmark /></p>
                                             <p>Note</p>
                                         </p>
                                         <p className="text-base font-semibold">Posting Date : {job.job_posting_date}</p>
                                         <p className="text-base font-semibold">Application Deadline : {job.application_deadline}</p>
-                                        <p className="text-base font-semibold">Total Number Of Applicants : {job.job_applicants_number}</p>
+                                        <p className="text-base font-semibold lg:inline md:inline hidden">Total Number Of Applicants : {job.job_applicants_number}</p>
                                     </div>
                                 </div>
                             </div>
@@ -203,38 +206,37 @@ const JobCategory = () => {
                         {/* <h2 className="mt-5">All Job</h2> */}
                         {
                             jobs.map(job => (
-                                <div key={job._id} className="mt-5">
-                                    <div key={job._id} className="mt-5 border-2 border-[#00e2bd] w-[1100px] h-[300px] ml-[200px] rounded-xl">
-                                        <div className="flex gap-10 pl-[100px]">
-                                            <div className="mt-[36px]">
-                                                <img className="w-[150px] h-[150px] rounded-xl" src={job.job_banner_url} alt="" />
-                                            </div>
-                                            <div className="mt-[40px]">
-                                                <p className="text-2xl font-semibold mb-5">{job.job_title}</p>
-                                                <p className="text-base font-medium mb-5 text-[#00e2bd]">Posted By : {job.user_name}</p>
-                                                <p className="flex gap-[380px]">
-                                                    <p className="text-base font-semibold">Salary : {job.salary_range}</p>
+                                <div key={job._id} className="mt-5 border-2 border-[#00e2bd] lg:w-[1100px] lg:h-[300px] h-auto lg:ml-[200px] rounded-xl">
+                                <div className="lg:flex gap-10 lg:pl-[100px]">
+                                    <div className="mt-[36px] ml-28 lg:ml-0 md:ml-[300px]">
+                                        <img className="w-[150px] h-[150px] rounded-xl" src={job.job_banner_url} alt="" />
+                                    </div>
+                                    <div className="mt-[40px] ml-20 lg:ml-0 md:ml-[280px]">
+                                        <p className="text-2xl font-semibold mb-5">{job.job_title}</p>
+                                        <p className="text-base font-medium mb-5 text-[#00e2bd]">Posted By : {job.user_name}</p>
+                                        <p className="lg:flex lg:gap-[380px]">
+                                            <p className="text-base font-semibold">Salary : {job.salary_range}</p>
 
-                                                    <Link to={`/ViewDetail/${job._id}`} onClick={(event) => handleViewDetails(job._id, event)}>
-                                                        <button className="button22">View Details</button>
-                                                    </Link>
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div className="rounded-b-xl h-[80px] pt-[23px] bg-[#00e2bd] mt-8">
-                                            <div className="flex gap-10 pl-[50px]">
-
-                                                <p className="text-lg gap-5 mr-14 font-medium flex text-center justify-center items-center">
-                                                    <p><FaBookmark /></p>
-                                                    <p>Note</p>
-                                                </p>
-                                                <p className="text-base font-semibold">Posting Date : {job.job_posting_date}</p>
-                                                <p className="text-base font-semibold">Application Deadline : {job.application_deadline}</p>
-                                                <p className="text-base font-semibold">Total Number Of Applicants : {job.job_applicants_number}</p>
-                                            </div>
-                                        </div>
+                                            <Link to={`/ViewDetail/${job._id}`} onClick={(event) => handleViewDetails(job._id, event)}>
+                                                <button className="button22 lg:mt-0 md:mt-7  mt-5 ml-9 lg:ml-0 md:ml-9">View Details</button>
+                                            </Link>
+                                        </p>
                                     </div>
                                 </div>
+
+                                <div className="rounded-b-xl lg:h-[80px] pt-[23px] lg:pb-0 md:pb-0 pb-5 bg-[#00e2bd] mt-8">
+                                    <div className="flex lg:gap-10 gap-6 lg:pl-[50px] md:pl-6 pl-5">
+
+                                        <p className="text-lg lg:gap-5 lg:mr-14 mr-2 font-medium flex  text-center justify-center items-center lg:inline md:inline hidden">
+                                            <p><FaBookmark /></p>
+                                            <p>Note</p>
+                                        </p>
+                                        <p className="text-base font-semibold">Posting Date : {job.job_posting_date}</p>
+                                        <p className="text-base font-semibold">Application Deadline : {job.application_deadline}</p>
+                                        <p className="text-base font-semibold lg:inline md:inline hidden">Total Number Of Applicants : {job.job_applicants_number}</p>
+                                    </div>
+                                </div>
+                            </div>
                             ))
                         }
                     </TabPanel>

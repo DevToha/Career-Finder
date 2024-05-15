@@ -9,19 +9,19 @@ const Banner = () => {
     return (
         <div className=''>
             <div className='relative'>
-                <img className='h-[680px]' src={image} alt="" />
+                <img className='lg:h-[680px] h-[450px] rounded-lg' src={image} alt="" />
             </div>
             <div className='absolute top-[123px] left-[930px]'>
                 <img src={image1} alt="" />
             </div>
 
-            <div className='absolute top-[275px] left-24'>
-                <h1 className='text-6xl text-white font-semibold'>
+            <div className='absolute top-[275px] lg:left-24 md:left-14 left-5'>
+                <h1 className='lg:text-6xl md:text-4xl text-2xl text-white font-semibold'>
                     <span className='text-orange-500'>2960</span> Thousands Dream <br />Jobs Available Now
                 </h1>
                 <div>
-                    <input className="input11 my-10" type="text" placeholder="Your Job Catgories" />
-                    <button className='button35 relative right-[128px]'>Find Jobs</button>
+                    <input className="input11 my-10 lg:w-[650px] md:w-[400px] w-[200px]" type="text" placeholder="Your Job Catgories" />
+                    <button className='button35 relative lg:right-[128px] right-[40px]'>Find Jobs</button>
                 </div>
                 <div className='flex'>
                     <p className='text-[#23c0e9] mt-2 mr-3'><FaTags /></p>
