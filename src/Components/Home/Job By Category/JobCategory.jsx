@@ -1,14 +1,18 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import './Job.css'
 import { Link } from "react-router-dom";
 import { FaBookmark } from "react-icons/fa";
-
+import { AuthContext } from "../../../Providers/AuthProvider";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const JobCategory = () => {
 
+    const { user } = useContext(AuthContext)
+    // const history = useHistory();
     const [jobs, setJobs] = useState([])
 
     useEffect(() => {
@@ -23,6 +27,19 @@ const JobCategory = () => {
     }
 
     // job_title, salary_range ,job_posting_date,user_name, application_deadline, job_applicants_number,job_banner_url
+
+    const handleViewDetails = (jobId, event) => {
+        if (!user) { // If user is not logged in
+            event.preventDefault(); // Prevent the default behavior of the link
+            toast.error("You have to log in first to view details"); // Show toast notification
+            setTimeout(() => {
+                window.location.href = '/login'; // Redirect to login page after a delay
+            }, 1500); // Adjust the delay as needed
+            return; // Exit the function
+        }
+        // Redirect to job details page for logged-in user
+        window.location.href = `/ViewDetail/${jobId}`;
+    }
 
     return (
         <div className="mt-10">
@@ -51,12 +68,13 @@ const JobCategory = () => {
                                         <p className="flex gap-[380px]">
                                             <p className="text-base font-semibold">Salary : {job.salary_range}</p>
 
-                                            <Link to={`/ViewDetail/${job._id}`}>
+                                            <Link to={`/ViewDetail/${job._id}`} onClick={(event) => handleViewDetails(job._id, event)}>
                                                 <button className="button22">View Details</button>
                                             </Link>
                                         </p>
                                     </div>
                                 </div>
+
                                 <div className="rounded-b-xl h-[80px] pt-[23px] bg-[#00e2bd] mt-8">
                                     <div className="flex gap-10 pl-[50px]">
 
@@ -87,7 +105,7 @@ const JobCategory = () => {
                                         <p className="flex gap-[380px]">
                                             <p className="text-base font-semibold">Salary : {job.salary_range}</p>
 
-                                            <Link to={`/ViewDetail/${job._id}`}>
+                                            <Link to={`/ViewDetail/${job._id}`} onClick={(event) => handleViewDetails(job._id, event)}>
                                                 <button className="button22">View Details</button>
                                             </Link>
                                         </p>
@@ -123,7 +141,7 @@ const JobCategory = () => {
                                         <p className="flex gap-[380px]">
                                             <p className="text-base font-semibold">Salary : {job.salary_range}</p>
 
-                                            <Link to={`/ViewDetail/${job._id}`}>
+                                            <Link to={`/ViewDetail/${job._id}`} onClick={(event) => handleViewDetails(job._id, event)}>
                                                 <button className="button22">View Details</button>
                                             </Link>
                                         </p>
@@ -159,7 +177,7 @@ const JobCategory = () => {
                                         <p className="flex gap-[380px]">
                                             <p className="text-base font-semibold">Salary : {job.salary_range}</p>
 
-                                            <Link to={`/ViewDetail/${job._id}`}>
+                                            <Link to={`/ViewDetail/${job._id}`} onClick={(event) => handleViewDetails(job._id, event)}>
                                                 <button className="button22">View Details</button>
                                             </Link>
                                         </p>
@@ -197,7 +215,7 @@ const JobCategory = () => {
                                                 <p className="flex gap-[380px]">
                                                     <p className="text-base font-semibold">Salary : {job.salary_range}</p>
 
-                                                    <Link to={`/ViewDetail/${job._id}`}>
+                                                    <Link to={`/ViewDetail/${job._id}`} onClick={(event) => handleViewDetails(job._id, event)}>
                                                         <button className="button22">View Details</button>
                                                     </Link>
                                                 </p>
@@ -222,7 +240,9 @@ const JobCategory = () => {
                     </TabPanel>
 
                 </Tabs>
+
             </div>
+            <ToastContainer />
         </div>
     );
 };

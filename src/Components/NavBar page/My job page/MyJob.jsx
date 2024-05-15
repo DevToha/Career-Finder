@@ -19,8 +19,10 @@ const MyJob = () => {
 
 
     return (
-        <div>
-            <h2 className="text-center font-bold text-4xl lg:mb-10 mb-5 mt-10">My Art And Craft Item</h2>
+        <div className="mt-10">
+
+            <h1 className="text-3xl font-semibold text-center mb-10 text-[#00e2bd]">Here You Can See Your All Job, You Have Added</h1>
+
             {
                 item?.map(p => (<MyJobs key={p._id} p={p} item={item} setItem={setItem}></MyJobs>))
             }

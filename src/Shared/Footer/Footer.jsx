@@ -1,4 +1,4 @@
-
+import image from './image/icon.png'
 
 const Footer = () => {
     return (
@@ -8,15 +8,18 @@ const Footer = () => {
                 <footer className='md:pl-20'>
                     <footer className=" footer text-base-content md:mb-16">
                         <nav>
-                            <h6 className="text-4xl font-bold md:ml-0 ml-10 text-white mt-[26px] text12">BRUSH STROKES</h6>
+                            <div className='flex gap-5'>
+                                <img className='w-[53px] h-[53px] mt-[17px]' src={image} alt="" />
+                                <h6 className="text-4xl font-bold md:ml-0 ml-10 text-white mt-[26px] text12">Career Finder</h6>
+                            </div>
                         </nav>
                         <nav className="lg:ml-24 ml-7 text-white">
-                            <h6 className="lg:text-4xl text-2xl ml-[85px] font-semibold mb-3 lg:ml-[64px]">Quick Links</h6>
+                            <h6 className="lg:text-4xl text-2xl ml-[85px] font-semibold mb-3 lg:ml-[81px]">Quick Links</h6>
                             <div className=" text-lg font-medium lg:mt-0 mt-8">
-                                <a className="">History</a>
-                                <a className=" mx-5">Artist</a>
-                                <a className="">Search</a>
-                                <a className=" ml-5">Help Center</a>
+                                <a className="hover:underline cursor-pointer">Facebook</a>
+                                <a className="hover:underline cursor-pointer mx-5">Linked In</a>
+                                <a className="hover:underline cursor-pointer">Twitter</a>
+                                <a className="hover:underline cursor-pointer ml-5">Whats App</a>
                             </div>
                         </nav>
                         <nav className="lg:ml-[90px] ml-[20px] lg:mt-0 mt-8 mb-8  lg:inline sm:inline md:hidden text-white">

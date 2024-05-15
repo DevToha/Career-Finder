@@ -44,7 +44,8 @@ const router = createBrowserRouter([
             },
             {
                 path: '/AllJob',
-                element: <AllJob></AllJob>
+                element: <AllJob></AllJob>,
+                loader: () => fetch('http://localhost:5000/jobsCount')
             },
             {
                 path: '/AppliedJob',
