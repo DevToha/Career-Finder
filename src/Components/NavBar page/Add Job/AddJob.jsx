@@ -10,8 +10,7 @@ import { AuthContext } from '../../../Providers/AuthProvider';
 
 const AddJob = () => {
     const { user } = useContext(AuthContext);
-    const [applicationDeadline, setApplicationDeadline] = useState(null);  // State for Application Deadline
-
+    const [applicationDeadline, setApplicationDeadline] = useState(null);
     const handleAddJob = event => {
         event.preventDefault();
 
@@ -36,7 +35,7 @@ const AddJob = () => {
             job_description,
             user_name,
             job_posting_date,
-            application_deadline: applicationDeadline, // Use state value for application deadline
+            application_deadline: applicationDeadline,
             job_applicants_number,
             user_email,
             job_banner_url,
